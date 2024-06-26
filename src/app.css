@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Fira Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(37, 37, 37); /* space blue violet */
+  padding: 0;
+  line-height: normal;
+  color: white;
+}
