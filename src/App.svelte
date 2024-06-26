@@ -2,16 +2,19 @@
   import Router from "svelte-spa-router";
   import LandingPage from "./components/LandingPage.svelte";
   import Quiz from "./components/Quiz.svelte";
+  import Result from "./components/Result.svelte";
   // Remove the unused imports
 
   const routes = {
     "/": LandingPage,
     "/vokabeltest": Quiz,
+    "/result": Result,
   };
 </script>
 
 <header>
   <h1>Planeten Page</h1>
+  b njbuzvuzbiuzbvu
   <nav>
     <ul>
       <li><a href="/">Startseite</a></li>
