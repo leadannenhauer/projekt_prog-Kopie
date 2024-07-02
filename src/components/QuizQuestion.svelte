@@ -1,4 +1,5 @@
 <script>
+  import { push } from "svelte-spa-router";
   export let question;
   import { activeQuestion, currentFeedback, score } from "../store";
   // console.log(questions);
@@ -7,11 +8,15 @@
     if (question.correct === index) {
       console.log("Correct");
       score.set($score + 1);
-      activeQuestion.set($activeQuestion + 1);
-      currentFeedback.set("Richtig! Du bist sooo gut");
+      $activeQuestion++;
+      currentFeedback.set("Richtig! Du bist sooo gut!");
     } else {
       console.log("Wrong");
-      currentFeedback.set("Falsch! Versuche es noch einmal.");
+      currentFeedback.set("Leider Falsch! Versuche es beim nächsten Mal.");
+      $activeQuestion++;
+    }
+    if ($activeQuestion === 4) {
+      push("/result");
     }
   }
 </script>
@@ -45,20 +50,26 @@
   }
 
   .answer-button {
-    background-color: rgb(255, 255, 240);
+    background-color: rgb(255, 255, 233);
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
-    color: black;
+    color: rgb(129, 0, 199);
   }
 
   .answer-button:hover {
-    background-color: rgb(255, 255, 200);
+    background-color: rgb(255, 199, 109);
   }
 
   .answer-wrapper {
     display: flex;
     flex-direction: row;
     gap: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .answer-button {
+      padding: 8px;
+    }
   }
 </style>

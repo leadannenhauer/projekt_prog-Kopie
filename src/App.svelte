@@ -3,6 +3,7 @@
   import LandingPage from "./components/LandingPage.svelte";
   import Quiz from "./components/Quiz.svelte";
   import Result from "./components/Result.svelte";
+
   // Remove the unused imports
 
   const routes = {
@@ -13,8 +14,8 @@
 </script>
 
 <header>
-  <h1>Planeten Page</h1>
-  b njbuzvuzbiuzbvu
+  <h1>Planeten Raten</h1>
+
   <nav>
     <ul>
       <li><a href="/">Startseite</a></li>
@@ -27,16 +28,14 @@
   <Router {routes} />
 </main>
 
-<footer></footer>
-
 <style>
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333; /* Hintergrundfarbe der Navbar */
+    background-color: rgb(41, 0, 63);
     color: white;
-    padding: 10px 20px;
+    padding: 40px 40px;
   }
 
   nav {
@@ -46,7 +45,7 @@
   ul {
     list-style: none;
     display: flex;
-    gap: 20px; /* Abstand zwischen den Buttons */
+    gap: 20px;
     padding: 0;
     margin: 0;
   }
@@ -56,14 +55,42 @@
   }
 
   a {
-    color: white;
+    background-color: rgb (255, 255, 233);
+    color: rgb(129, 0, 199);
     text-decoration: none;
-    padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
   }
 
   a:hover {
-    background-color: #555; /* Hintergrundfarbe bei Hover */
+    color: rgb(255, 199, 109);
+  }
+
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    nav {
+      width: 100%;
+    }
+
+    ul {
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+      gap: 10px;
+    }
+
+    li {
+      width: 100%;
+    }
+
+    a {
+      display: block;
+      width: auto;
+      text-align: left;
+    }
   }
 </style>

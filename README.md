@@ -1,6 +1,14 @@
-# Svelte + Vite
+## What is this game about?
 
-This template should help get you started developing with Svelte in Vite.
+In dem Spiel Planeten Raten kann man spielerisch Fakten über die Planeten lernen.
+Sobald man das Spiel gestartet hat, erscheint eine Karte mit einer Frage und 3 Antwortmöglichkeiten.
+Eine davon ist richtig. Wenn man sich durch alle vie Fragen geklickt hat sieht man em Ende sienen Punktestand und hat dei Möglichkeit nochmal zu spielen. Falls das nicht der Fall ist kann man ganz einafach über die Navigationsbar wiedr zurück zur Startseite.
+
+## Prozess
+
+Angefangen habe ich mit einem Wireframe in Figma. Anschließend ging es im Studio Code weiter. Zuerst wurden verschiedene Components erstellt. Mit der Zeit kam erst der Header dann die Landingpage. Im nächsten Schritt der Router zur Quizpage.
+Um die Fragen zu programmieren hatte ich eine planetData.js hochgeladen um auf Basis dieser Daten weiter zumachen. Nachdem Quiz.svelte zum Großteil Stand habe ich die API mit eingebunden. Hierfür habe ich die verwendet die ich bereits vom Unterricht kannte:
+https://api.le-systeme-solaire.net/en/ . Gegen Ende habe ich noch dei Result.svelte Page hinzugefügt, die Auskunft über das Ergebnis gibt. Ganz am Ende habe ich alles mit css gestylet und zusätzlich einen media breakpoint hinzugefügt.
 
 ## Recommended IDE Setup
 
@@ -42,6 +50,6 @@ If you have state that's important to retain within a component, consider creati
 ```js
 // store.js
 // An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+import { writable } from "svelte/store";
+export default writable(0);
 ```

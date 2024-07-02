@@ -1,4 +1,3 @@
-// hier speicherst du globale variablen wie den punktestand usw rein
 import { writable } from "svelte/store";
 export const score = writable(0);
 

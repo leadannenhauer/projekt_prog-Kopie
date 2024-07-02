@@ -88,13 +88,10 @@
   }
 </script>
 
-<h2>Vokabeln</h2>
-<p>Hier findest du einen Vokabeltrainer zu den Planeten.</p>
-
-<!-- Hier ist ein aktueller Score -->
-<p>Aktueller Score: {$score}</p>
-
-<p>Frage {$activeQuestion + 1} von {questions.length - 1}</p>
+<div class="Punktestand">
+  <p>Frage {$activeQuestion + 1} von {questions.length - 1}</p>
+  <p>Du hast {$score} Punkte!</p>
+</div>
 
 <div class="quiz-container">
   <div class="quiz-card">
@@ -106,6 +103,11 @@
 </div>
 
 <style>
+  .Punktestand {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+  }
   .quiz-container {
     display: flex;
     justify-content: center;
@@ -113,14 +115,31 @@
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+    text-align: center;
   }
 
   .quiz-card {
-    background-color: rgb(152, 152, 152);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(129, 0, 199);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    max-width: 800px;
     width: 100%;
-    padding: 20px;
+    padding: 80px;
+    color: white;
+    border: 6px solid rgb(251, 169, 38);
+  }
+
+  @media (max-width: 600px) {
+    .score-and-question {
+      font-size: 12px; /* Kleinere Schriftgröße für mobile Geräte */
+      padding: 5px 10px; /* Weniger Padding für mobile Geräte */
+    }
+
+    .quiz-card {
+      padding: 20px; /* Weniger Padding für mobile Geräte */
+    }
   }
 </style>
